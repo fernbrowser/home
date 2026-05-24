@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Fern Browser — A real browser and AI for Apple Watch" />
   <meta property="og:description" content="Standalone. Private. Free. The watchOS app the Apple Watch deserved." />
-  <meta property="og:image" content="./screenshots/hero.png" />
+  <meta property="og:image" content="./hero.png" />
 
   <link rel="preconnect" href="https://apps.apple.com" />
   <link rel="icon" type="image/png" href="./appicon.png" />
@@ -219,7 +219,7 @@
     /* ── Screenshot showcase ─────────────────────────────────────────── */
     .shots {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
     .shot {
@@ -543,10 +543,8 @@
       </div>
     </div>
 
-    <div class="hero-shot placeholder">
-      <!-- Drop your hero device frame at ./screenshots/hero.png and uncomment the line below.
-           Recommended: 800×1100 PNG with transparent background. -->
-      <!-- <img src="./screenshots/hero.png" alt="Fern Browser running on Apple Watch" /> -->
+    <div class="hero-shot">
+      <img src="./hero.png" alt="Fern Browser running on Apple Watch" />
     </div>
   </header>
 
@@ -560,10 +558,21 @@
     </p>
 
     <div class="shots">
-      <div class="shot placeholder">Drop ./screenshots/home.png here</div>
-      <div class="shot placeholder">Drop ./screenshots/ai.png here</div>
-      <div class="shot placeholder">Drop ./screenshots/bookmarks.png here</div>
-      <div class="shot placeholder">Drop ./screenshots/history.png here</div>
+      <div class="shot">
+        <img src="./search.png" alt="Search screen" />
+        <h3>Search</h3>
+        <p>Type or dictate, hit go.</p>
+      </div>
+      <div class="shot">
+        <img src="./assistant.png" alt="AI assistant chat screen" />
+        <h3>AI Assistant</h3>
+        <p>Pick a model, ask anything.</p>
+      </div>
+      <div class="shot">
+        <img src="./bookmarks.png" alt="Bookmarks screen" />
+        <h3>Bookmarks</h3>
+        <p>Saved sites, one tap away.</p>
+      </div>
     </div>
   </section>
 
@@ -776,8 +785,8 @@
     // Save-to-Passwords flow.
     // Safari only shows "Save Password?" when a form submission causes a real
     // page navigation. We must NOT call e.preventDefault() — instead we let
-    // the form submit normally (navigating to #setup), and on page load we
-    // detect the ?saved=1 query param to reveal the success message.
+    // the form submit normally (navigating to ?saved=1#setup), and on page
+    // load we detect the query param to reveal the success message.
     (function () {
       const success = document.getElementById("save-success");
 
